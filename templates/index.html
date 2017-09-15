@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button type="button" onclick="load()">Test</button>
+<p id="demo">HI</p>
+
+<script>
+function load() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://127.0.0.1:8000/tester/", true);
+  xhttp.send();
+}
+  </script>
+
+</body>
+</html>
